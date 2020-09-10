@@ -1,0 +1,60 @@
+@import './null.scss';
+@font-face {
+	font-family: 'Exo';
+	font-display: swap;
+	src: url("../fonts/Exo2.0-Thin.otf");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Trebuchet MS';
+	font-display: swap;
+	src: url("../fonts/Trebuchet\ MS.ttf");
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0 0 0 80px;
+  overflow: hidden;
+  background: url('../images/941afad4465c7704abe8996ef0f495742e3963a5.png') repeat;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  @media(max-width: 1100px) {
+    padding: 0;;
+  }
+}
+
+.text {
+  text-shadow: 0 1px 0 #000000;
+  color: #ffffff;
+  font-family: "Exo";
+  font-size: 36px;
+  text-align: center;
+  // margin-bottom: -83px;
+
+@media(max-width: 375px) {
+    font-size: 24px;
+    margin: 5px;
+  }
+
+}
+
+.row {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  @media(max-width: 1100px) {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
+

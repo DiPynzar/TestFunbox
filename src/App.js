@@ -1,26 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import styles from './scss/index.module.scss'
+import ProductCard from './components/ProductCard'
+import catsData from './catsData'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const App = () => (
+  <div className={styles.wrapper}>
+    <p className={styles.text}>Ты сегодня покормил кота?</p>
+    <div className={styles.row}>
+      {
+        catsData.map(item => <ProductCard key={item.id} {...item} />)
+      }
     </div>
-  );
-}
+  </div>)
 
-export default App;
+export default App
