@@ -1,8 +1,11 @@
+$bgcolorInitial: #1698d9;
+$bgcolorHover: #2ea8e6;
+
 
 .card {
     flex: 0 1 25%;
     font-family: "Trebuchet MS";
-    margin: 0 80px 0 0;
+    // margin: 0 80px 0 0;
     @media(max-width: 1100px) {
       margin: 0;
     }
@@ -39,10 +42,11 @@
       position: relative;
       width: 328px;
       height: 488px;
-      background-color: #1698d9;
+      background-color: $bgcolorInitial;
       border-radius: 14px;
       clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%, 0 10%);
       :hover {
+        // border-color: $bgcolorHover;
         // background-color: #2ea8e6;
         & .weight {
             background-color: #2ea8e6;
@@ -55,27 +59,28 @@
       }
       
 }
-// .borderDisabled { 
-//   margin: 0 14px;
-//   position: relative;
-//   width: 328px;
-//   height: 488px;
-//   background-color: #b3b3b3;
-//   border-radius: 14px;
-//   clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%, 0 10%);
-//   & .main {
-//     opacity: 0.5;
-//     cursor: auto;
-//   }
-//   @media(max-width: 320px) {
-//     width: 288px;
-//     height: 448px;
-//     margin: 0 8px;
-//   }
-//   & .weight {
-//     background-color: #b3b3b3;
-//   }
-// }
+
+.borderDisabled { 
+  margin: 0 14px;
+  position: relative;
+  width: 328px;
+  height: 488px;
+  background-color: #b3b3b3;
+  border-radius: 14px;
+  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%, 0 10%);
+  & .main {
+    opacity: 0.5;
+    cursor: auto;
+  }
+  @media(max-width: 320px) {
+    width: 288px;
+    height: 448px;
+    margin: 0 8px;
+  }
+  & .weight {
+    background-color: #b3b3b3;
+  }
+}
 
 .borderSelected {
     margin: 0 14px;
@@ -100,20 +105,20 @@
 .title {
       color: #666666;
       font-size: 16px;
-      margin-bottom: 5px;
+      margin-bottom: 10px;
 }
 
 .titleHovered {
   color: #e62e7a;
   font-size: 16px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
   
 .brandname {
       color: #000000;
       font-size: 48px;
       font-weight: 700;
-      margin: 0;
+      margin: 0 0 5px 0;
       letter-spacing: 2px;
       @media(max-width: 320px) {
         font-size: 30px;
@@ -124,7 +129,7 @@
       color: #000000;
       font-size: 24px;
       font-weight: 700;
-      margin: 0 0 10px 0;
+      margin: 0 0 15px 0;
       @media(max-width: 320px) {
         font-size: 20px;
         font-weight: 700; 
@@ -147,7 +152,7 @@
     align-self: flex-end;
     margin: 0 15px 0 0;
     border-radius: 50%;
-    padding: 5px;
+    padding: 10px 5px;
     width: 81px;
     height: 81px;
     background-color: #1698d9;
@@ -159,7 +164,7 @@
     align-self: flex-end;
     margin: 0 15px 0 0;
     border-radius: 50%;
-    padding: 5px;
+    padding: 10px 5px;
     width: 81px;
     height: 81px;
     display: flex;
@@ -170,7 +175,7 @@
 .top {
       color: #ffffff;
       font-size: 42px;
-      margin-bottom: -5px;
+      margin-bottom: -3px;
     }
 .bottom {
         font-size: 21px;
@@ -191,4 +196,13 @@
   text-decoration: dashed;
   color: #1698d9;
   cursor: pointer;
+}
+.disabledDescription {
+  text-shadow: 0 1px 0 #000000;
+  color: #ffff66;
+  font-size: 13px;
+  line-height: 16px;
+  margin: 15px 0 30px 0;
+  text-align: center;
+
 }

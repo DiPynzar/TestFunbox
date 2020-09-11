@@ -13,19 +13,27 @@ const ProductCard = props => {
   const [isMouseEnter, setIsMouseEnter] = useState(false)
   const [isFirstMouseEnter, setIsFirstMouseEnter] = useState(true)
 
-  const handleToggleCardSelection = () => {
-    setIsCardSelected(!isCardSelected)
-    isCardSelected ? setIsFirstMouseEnter(true) : setIsFirstMouseEnter(false)
-  }
+  const handleToggleCardSelection = () => !isDisabled ? setIsCardSelected(!isCardSelected) : null
+  const handleMouseEnterCard = () => isCardSelected ? isFirstMouseEnter ? setIsFirstMouseEnter(true) : setIsMouseEnter(true) : setIsFirstMouseEnter(false)
+  const handleOnMouseLeaveCard = () => isCardSelected ? setIsMouseEnter(false) : isMouseEnter
 
-  const borderStyle = isCardSelected ? styles.borderSelected : styles.border
-  const weightStyle = isCardSelected ? styles.weightSelected : styles.weight
+  // const handleToggleCardSelection = () => {
+  //   setIsCardSelected(!isCardSelected)
+  //   isCardSelected ? setIsFirstMouseEnter(true) : setIsFirstMouseEnter(false)
+  // }
+  // const handleMouseEnterCard = () => isCardSelected ? isFirstMouseEnter ? setIsFirstMouseEnter(false) : setIsMouseEnter(true) : null
+  // const handleOnMouseLeaveCard = () => isCardSelected ? setIsMouseEnter(false) : isMouseEnter
+  // const handleMouseEnterCard = (isCardSelected) => isCardSelected ? isFirstMouseEnter ? setIsFirstMouseEnter(false) : setIsMouseEnter(true) : null
+  // const handleOnMouseLeaveCard = (isCardSelected) => isCardSelected ? setIsMouseEnter(false) : isMouseEnter
 
-  const handleMouseEnterCard = (isCardSelected) => isCardSelected ? isFirstMouseEnter ? setIsFirstMouseEnter(false) : setIsMouseEnter(true) : null
-  const handleOnMouseLeaveCard = (isCardSelected) => isCardSelected ? setIsMouseEnter(false) : null
+
+
 
   const cardTitle = !isCardSelected ? 'Сказочное заморское яство' : isMouseEnter ? 'Котэ не одобряет?' : 'Сказочное заморское яство'
   const titleStyle = !isCardSelected ? styles.title : isMouseEnter ? styles.titleHovered : styles.title
+  const borderStyle = !isDisabled ? isCardSelected ? styles.borderSelected : styles.border : styles.borderDisabled
+  const weightStyle = isCardSelected ? styles.weightSelected : styles.weight
+  const descriptionStyle = !isDisabled ? styles.description : styles.disabledDescription
 
   return (
     <form className={styles.card} disabled={isDisabled}>
@@ -46,13 +54,13 @@ const ProductCard = props => {
         </main>
       </div>
 
-      <div className={styles.description}>
-        {isCardSelected ? selected : <ProductInitialDescription selected={selected} isDisabled={isDisabled} handleToggleCardSelection={handleToggleCardSelection} />}
+      <div className={descriptionStyle} >
+        {!isDisabled ? <ProductInitialDescription selected={selected} isDisabled={isDisabled} handleToggleCardSelection={handleToggleCardSelection} /> : disabledText}
 
       </div>
 
 
-    </form>
+    </form >
   )
 }
 
