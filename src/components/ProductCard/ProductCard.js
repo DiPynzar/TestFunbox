@@ -7,27 +7,32 @@ import ProductInitialDescription from '../ProductInitialDescription/ProductIniti
 
 const ProductCard = props => {
   const { taste, weight, description, amount, mouseBonus, note, isDisabled } = props;
-  const { selected, disabledText } = description
 
   const [isCardSelected, setIsCardSelected] = useState(false)
   const [isMouseEnter, setIsMouseEnter] = useState(false)
-  const [isFirstMouseEnter, setIsFirstMouseEnter] = useState(true)
+  const [isMouseLeave, setIsMouseLeave] = useState(true)
 
-  const handleToggleCardSelection = () => !isDisabled ? setIsCardSelected(!isCardSelected) : null
-  const handleMouseEnterCard = () => isCardSelected ? isFirstMouseEnter ? setIsFirstMouseEnter(true) : setIsMouseEnter(true) : setIsFirstMouseEnter(false)
-  const handleOnMouseLeaveCard = () => isCardSelected ? setIsMouseEnter(false) : isMouseEnter
+  const handleToggleCardSelection = () => {
+    !isDisabled ? setIsCardSelected(!isCardSelected) : setIsCardSelected(false)
+    setIsMouseLeave(!isMouseLeave)
+    setIsMouseEnter(false)
+  }
 
-  // const handleToggleCardSelection = () => {
-  //   setIsCardSelected(!isCardSelected)
-  //   isCardSelected ? setIsFirstMouseEnter(true) : setIsFirstMouseEnter(false)
-  // }
-  // const handleMouseEnterCard = () => isCardSelected ? isFirstMouseEnter ? setIsFirstMouseEnter(false) : setIsMouseEnter(true) : null
-  // const handleOnMouseLeaveCard = () => isCardSelected ? setIsMouseEnter(false) : isMouseEnter
-  // const handleMouseEnterCard = (isCardSelected) => isCardSelected ? isFirstMouseEnter ? setIsFirstMouseEnter(false) : setIsMouseEnter(true) : null
-  // const handleOnMouseLeaveCard = (isCardSelected) => isCardSelected ? setIsMouseEnter(false) : isMouseEnter
+  const handleMouseEnterCard = () => {
+    if (isCardSelected && isMouseLeave) {
+      setIsMouseEnter(!isMouseLeave)
+    } else {
+      setIsMouseEnter(!isMouseEnter)
+    }
+  }
 
-
-
+  const handleOnMouseLeaveCard = () => {
+    if (isCardSelected && isMouseLeave) {
+      setIsMouseEnter(true)
+    } else {
+      setIsMouseEnter(false)
+    }
+  }
 
   const cardTitle = !isCardSelected ? 'Сказочное заморское яство' : isMouseEnter ? 'Котэ не одобряет?' : 'Сказочное заморское яство'
   const titleStyle = !isCardSelected ? styles.title : isMouseEnter ? styles.titleHovered : styles.title
@@ -36,7 +41,7 @@ const ProductCard = props => {
   const descriptionStyle = !isDisabled ? styles.description : styles.disabledDescription
 
   return (
-    <form className={styles.card} disabled={isDisabled}>
+    <div className={styles.card}>
       <div className={borderStyle}>
         <main className={styles.main} onClick={handleToggleCardSelection} onMouseEnter={handleMouseEnterCard} onMouseLeave={handleOnMouseLeaveCard}>
 
@@ -53,14 +58,18 @@ const ProductCard = props => {
           </div>
         </main>
       </div>
-
-      <div className={descriptionStyle} >
-        {!isDisabled ? <ProductInitialDescription selected={selected} isDisabled={isDisabled} handleToggleCardSelection={handleToggleCardSelection} /> : disabledText}
-
-      </div>
-
-
-    </form >
+      {!isDisabled ?
+        isCardSelected ?
+          <p className={descriptionStyle}>{description}</p>
+          :
+          <ProductInitialDescription
+            isDisabled={isDisabled}
+            handleToggleCardSelection={handleToggleCardSelection}
+          />
+        :
+        <p className={descriptionStyle}>Печалька с {taste} закончился.</p>
+      }
+    </div >
   )
 }
 
@@ -71,11 +80,7 @@ ProductCard.propTypes = {
   mouseBonus: PropTypes.number.isRequired,
   note: PropTypes.string,
   weight: PropTypes.number.isRequired,
-  description: PropTypes.exact({
-    initial: PropTypes.string.isRequired,
-    selected: PropTypes.string.isRequired,
-    disabled: PropTypes.string.isRequired
-  })
+  description: PropTypes.string.isRequired
 }
 
 export default ProductCard

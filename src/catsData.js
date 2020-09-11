@@ -6,11 +6,7 @@ const catsData = [
     mouseBonus: 1,
     note: null,
     weight: 0.5,
-    description: {
-      initial: 'Чего сидишь? Порадуй котэ, купи.',
-      selected: 'Печень утки разваная с артишоками',
-      disabledText: `Печалька, с фуа-гра закончились`
-    },
+    description: 'Печень утки разваная с артишоками',
     isDisabled: false
   },
   {
@@ -20,11 +16,7 @@ const catsData = [
     mouseBonus: 2,
     note: null,
     weight: 2,
-    description: {
-      initial: 'Чего сидишь? Порадуй котэ, купи.',
-      selected: 'Головы щучьи с чесноком да сежайшая сёмгушка.',
-      disabledText: `Печалька, с рыбой закончились`
-    },
+    description: 'Головы щучьи с чесноком да сежайшая сёмгушка.',
     isDisabled: false
   },
   {
@@ -34,11 +26,7 @@ const catsData = [
     mouseBonus: 5,
     note: 'заказчик доволен',
     weight: 5,
-    description: {
-      initial: 'Чего сидишь? Порадуй котэ, купи.',
-      selected: 'Филе из цыплят с тефтелями в бульоне',
-      disabledText: `Печалька, с курой закончились`
-    },
+    description: 'Филе из цыплят с тефтелями в бульоне',
     isDisabled: true
   }
 ]
