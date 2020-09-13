@@ -15,9 +15,14 @@ $bgcolorHover: #2ea8e6;
 .main {
     background-color: #f2f2f2;
     background-image: url('../../images/cat.png');
-    background-position: 100% 100%;
+    background-position: bottom left;
     background-repeat: no-repeat;
     padding: 5px 0 15px 49px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    cursor: pointer;
     position: absolute;
     top: 4px;
     left: 4px;
@@ -25,11 +30,7 @@ $bgcolorHover: #2ea8e6;
     height: 480px; 
     border-radius: 14px;
     clip-path: polygon(14.7% 0, 100% 0, 100% 100%, 0 100%, 0 9.7%);
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-direction: column;
-    cursor: pointer;
+    // z-index: 3;
     @media(max-width: 320px) {
       width: 280px;
       height: 440px; 
@@ -45,8 +46,8 @@ $bgcolorHover: #2ea8e6;
       background-color: $bgcolorInitial;
       border-radius: 14px;
       clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%, 0 10%);
+      // z-index: 1;
       :hover {
-        // border-color: $bgcolorHover;
         // background-color: #2ea8e6;
         & .weight {
             background-color: #2ea8e6;
@@ -183,26 +184,3 @@ $bgcolorHover: #2ea8e6;
         margin: 0;
     }
 
-
-.description {
-  text-shadow: 0 1px 0 #000000;
-  color: #ffffff;
-  font-size: 13px;
-  line-height: 16px;
-  margin: 15px 0 30px 0;
-  text-align: center;
-}
-.initialDescription {
-  text-decoration: dashed;
-  color: #1698d9;
-  cursor: pointer;
-}
-.disabledDescription {
-  text-shadow: 0 1px 0 #000000;
-  color: #ffff66;
-  font-size: 13px;
-  line-height: 16px;
-  margin: 15px 0 30px 0;
-  text-align: center;
-
-}

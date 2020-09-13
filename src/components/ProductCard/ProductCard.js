@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styles from './ProductCard.module.scss'
 import PropTypes from 'prop-types'
 import AmountOfProducts from '../AmountOfProducts'
-import ProductInitialDescription from '../ProductInitialDescription/ProductInitialDescription'
+import ProductDescription from '../ProductDescription'
 
 
 const ProductCard = props => {
@@ -38,7 +38,6 @@ const ProductCard = props => {
   const titleStyle = !isCardSelected ? styles.title : isMouseEnter ? styles.titleHovered : styles.title
   const borderStyle = !isDisabled ? isCardSelected ? styles.borderSelected : styles.border : styles.borderDisabled
   const weightStyle = isCardSelected ? styles.weightSelected : styles.weight
-  const descriptionStyle = !isDisabled ? styles.description : styles.disabledDescription
 
   return (
     <div className={styles.card}>
@@ -58,23 +57,14 @@ const ProductCard = props => {
           </div>
         </main>
       </div>
-      {!isDisabled ?
-        isCardSelected ?
-          <p className={descriptionStyle}>{description}</p>
-          :
-          <ProductInitialDescription
-            isDisabled={isDisabled}
-            handleToggleCardSelection={handleToggleCardSelection}
-          />
-        :
-        <p className={descriptionStyle}>Печалька с {taste} закончился.</p>
-      }
+
+      <ProductDescription description={description} taste={taste} isDisabled={isDisabled} isCardSelected={isCardSelected} handleToggleCardSelection={handleToggleCardSelection} />
+
     </div >
   )
 }
 
 ProductCard.propTypes = {
-  id: PropTypes.number.isRequired,
   taste: PropTypes.string.isRequired,
   amount: PropTypes.number.isRequired,
   mouseBonus: PropTypes.number.isRequired,

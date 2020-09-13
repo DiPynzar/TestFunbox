@@ -12,11 +12,11 @@ const AmountOfProducts = props => {
 
     return (
         <div>
-            <p className={styles.amount}> {amount} &nbsp;
-                <span> {declOfNum(amount, ['порция', ' порции', ' порций'])}</span>
+            <p className={styles.amount}>{amount}
+                <span> {declOfNum(amount, ['порция', 'порции', 'порций'])}</span>
             </p>
             <p className={styles.amount}>
-                {mouseBonus >= 2 ? (mouseBonus) : null} &nbsp;
+                {mouseBonus >= 2 ? (mouseBonus) : null}
                 <span>
                     {mouseBonus !== 0 ? declOfNum(mouseBonus, ['мышь', ' мыши', ' мышей']) + ' в подарок' : ''}
                 </span>

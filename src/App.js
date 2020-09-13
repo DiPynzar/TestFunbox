@@ -8,7 +8,7 @@ const App = () => (
     <div className={styles.text}>Ты сегодня покормил кота?</div>
     <div className={styles.row}>
       {
-        catsData.map(item => <ProductCard key={item.id} {...item} />)
+        catsData.map((item, i) => <ProductCard key={i} {...item} />)
       }
     </div>
   </div>

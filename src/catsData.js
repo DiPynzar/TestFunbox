@@ -1,6 +1,5 @@
 const catsData = [
   {
-    id: 0,
     taste: 'фуа-гра',
     amount: 10,
     mouseBonus: 1,
@@ -10,17 +9,15 @@ const catsData = [
     isDisabled: false
   },
   {
-    id: 1,
     taste: 'рыбой',
     amount: 40,
     mouseBonus: 2,
     note: null,
     weight: 2,
-    description: 'Головы щучьи с чесноком да сежайшая сёмгушка.',
+    description: 'Головы щучьи с чесноком да свежайшая сёмгушка.',
     isDisabled: false
   },
   {
-    id: 2,
     taste: 'курой',
     amount: 100,
     mouseBonus: 5,
