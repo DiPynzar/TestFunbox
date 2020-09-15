@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './scss/index.module.scss'
+import styles from './scss/App.module.scss'
 import ProductCard from './components/ProductCard'
 import catsData from './catsData'
 

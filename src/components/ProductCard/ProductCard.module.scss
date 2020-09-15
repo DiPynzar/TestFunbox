@@ -1,112 +1,110 @@
-$bgcolorInitial: #1698d9;
-$bgcolorHover: #2ea8e6;
-
 
 .card {
-    flex: 0 1 25%;
-    font-family: "Trebuchet MS";
-    // margin: 0 80px 0 0;
-    @media(max-width: 1100px) {
-      margin: 0;
-    }
-   
-  }
-  
-.main {
-    background-color: #f2f2f2;
-    background-image: url('../../images/cat.png');
-    background-position: bottom left;
-    background-repeat: no-repeat;
-    padding: 5px 0 15px 49px;
+    flex: 0 0 33.333%;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-wrap: wrap;
     flex-direction: column;
-    cursor: pointer;
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    width: 320px;
-    height: 480px; 
-    border-radius: 14px;
-    clip-path: polygon(14.7% 0, 100% 0, 100% 100%, 0 100%, 0 9.7%);
-    // z-index: 3;
-    @media(max-width: 320px) {
-      width: 280px;
-      height: 440px; 
-      padding: 10px 0 10px 40px;
+    justify-content: center;
+    align-items: center;
+    font-family: "Trebuchet MS";
+    position: relative;
+    @media(max-width: 1120px) {
+      flex: 0 0 50%;
     }
-}
- 
-.border {
-      margin: 0 14px;
-      position: relative;
-      width: 328px;
-      height: 488px;
-      background-color: $bgcolorInitial;
-      border-radius: 14px;
-      clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%, 0 10%);
-      // z-index: 1;
-      :hover {
-        // background-color: #2ea8e6;
-        & .weight {
-            background-color: #2ea8e6;
-        }
-      }
-      @media(max-width: 320px) {
-        width: 288px;
-        height: 448px;
-        margin: 0 8px;
-      }
-      
 }
 
-.borderDisabled { 
-  margin: 0 14px;
+  //----Параметры svg-рамки-------НАЧАЛО--
+  .cardBorder {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .borderColor {
+    stroke: #1698d9;
+    stroke-width: 4px;
+  }
+  .borderColorHover {
+    stroke: #2ea8e6;
+    stroke-width: 4px;
+  }
+  .borderColorSelectedHover {
+    stroke: #e62e7a;
+    stroke-width: 4px;
+  }
+  //----Параметры svg-рамки-------КОНЕЦ
+
+// ---------Параметры рамки-----НАЧАЛО
+.border {
+  width: 316px;
+  height: 476px;
   position: relative;
-  width: 328px;
-  height: 488px;
-  background-color: #b3b3b3;
-  border-radius: 14px;
-  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%, 0 10%);
+  :hover {
+    .weight {
+      background-color: #2ea8e6;
+    }
+  }
+}
+.borderDisabled { 
+  width: 316px;
+  height: 476px;
+  position: relative;
   & .main {
     opacity: 0.5;
     cursor: auto;
   }
-  @media(max-width: 320px) {
-    width: 288px;
-    height: 448px;
-    margin: 0 8px;
-  }
   & .weight {
     background-color: #b3b3b3;
+    }
+  & .borderColor {
+    stroke: #b3b3b3;
   }
 }
 
 .borderSelected {
-    margin: 0 14px;
-      position: relative;
-      width: 328px;
-      height: 488px;
-      background-color: #d91667;
-      border-radius: 14px;
-      clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%, 0 10%);
-      @media(max-width: 320px) {
-        width: 288px;
-        height: 448px;
-        margin: 0 8px;
-      }
-      :hover {
-        & .weightSelected {
-            background-color: #e62e7a;
-        }
-      }
+  width: 316px;
+  height: 476px;
+  position: relative;
+  & .borderColor {
+    stroke: #d91667;
+  }
+  :hover {
+    .weightSelected {
+        background-color: #e62e7a;
+    }
+  }
 }
+  //--------Параметры рамки------------КОНЕЦ
+
+
+  //--------Карточка с товаром -------------НАЧАЛО
+
+.main {
+  flex: 0 0 100%;
+  background-image: url('../../images/cat.png');
+  background-position: 4px 203px;
+  background-repeat: no-repeat;
+  padding: 5px 0 15px 49px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  cursor: pointer;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 316px;
+  height: 476px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+ 
+
   
 .title {
-      color: #666666;
-      font-size: 16px;
-      margin-bottom: 10px;
+  color: #666666;
+  margin-bottom: 10px;
+  font-size: 16px;
 }
 
 .titleHovered {
@@ -116,71 +114,67 @@ $bgcolorHover: #2ea8e6;
 }
   
 .brandname {
-      color: #000000;
-      font-size: 48px;
-      font-weight: 700;
-      margin: 0 0 5px 0;
-      letter-spacing: 2px;
-      @media(max-width: 320px) {
-        font-size: 30px;
-      }
+  color: #000000;
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0 0 5px 0;
+  letter-spacing: 2px;
 }
   
 .taste {
-      color: #000000;
-      font-size: 24px;
-      font-weight: 700;
-      margin: 0 0 15px 0;
-      @media(max-width: 320px) {
-        font-size: 20px;
-        font-weight: 700; 
-      }
+  color: #000000;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 15px 0;
 }
 
 .amount {
-      display: flex;
-      color: #666666;
-      font-size: 14px;
-      line-height: 16px;
-      font-weight: 700;
-      margin: 0;
-      span {
-        font-weight: 400;
-      }
+  display: flex;
+  color: #666666;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 700;
+  margin: 0;
+  span {
+    font-weight: 400;
+  }
 }
 
-  .weight {
-    align-self: flex-end;
-    margin: 0 15px 0 0;
-    border-radius: 50%;
-    padding: 10px 5px;
-    width: 81px;
-    height: 81px;
-    background-color: #1698d9;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+.weight {
+  align-self: flex-end;
+  margin: 0 15px 0 0;
+  border-radius: 50%;
+  padding: 5px;
+  width: 81px;
+  height: 81px;
+  background-color: #1698d9;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   }
-  .weightSelected {
-    align-self: flex-end;
-    margin: 0 15px 0 0;
-    border-radius: 50%;
-    padding: 10px 5px;
-    width: 81px;
-    height: 81px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    background-color: #d91667;
+.weightSelected {
+  align-self: flex-end;
+  margin: 0 15px 0 0;
+  border-radius: 50%;
+  padding: 5px;
+  width: 81px;
+  height: 81px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #d91667;
   }
 .top {
-      color: #ffffff;
-      font-size: 42px;
-      margin-bottom: -3px;
+  color: #ffffff;
+  font-size: 42px;
+  margin-bottom: 0;
     }
 .bottom {
-        font-size: 21px;
-        color: #ffffff;
-        margin: 0;
+  font-size: 21px;
+  color: #ffffff;
+  margin: 0;
+  line-height: 16px;
+  margin: 0;
     }
 
+//---------Карточка с товаром-----КОНЕЦ

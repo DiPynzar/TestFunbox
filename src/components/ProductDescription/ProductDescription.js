@@ -9,7 +9,7 @@ const ProductDescription = props => {
     const ProductInitialDescription = () => {
         return (
             <p>
-                Чего сидишь? Порадуй котэ, <a href='!#' className={styles.initialDescription} onClick={handleToggleCardSelection}>купи.</a>
+                Чего сидишь? Порадуй котэ, <button type='button' className={styles.initialDescription} onClick={handleToggleCardSelection}>купи.</button>
             </p>
         )
     }
@@ -26,7 +26,7 @@ const ProductDescription = props => {
 
             {
                 (() => {
-                    debugger;
+
                     if (isDisabled) {
                         return <ProductDisabledDescription {...props} />
                     } else if (isCardSelected) {

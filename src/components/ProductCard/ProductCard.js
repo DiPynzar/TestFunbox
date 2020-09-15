@@ -3,6 +3,7 @@ import styles from './ProductCard.module.scss'
 import PropTypes from 'prop-types'
 import AmountOfProducts from '../AmountOfProducts'
 import ProductDescription from '../ProductDescription'
+import ProductCardBorder from './ProductCardBorder'
 
 
 const ProductCard = props => {
@@ -18,7 +19,7 @@ const ProductCard = props => {
     setIsMouseEnter(false)
   }
 
-  const handleMouseEnterCard = () => {
+  const handleOnMouseEnterCard = () => {
     if (isCardSelected && isMouseLeave) {
       setIsMouseEnter(!isMouseLeave)
     } else {
@@ -42,24 +43,21 @@ const ProductCard = props => {
   return (
     <div className={styles.card}>
       <div className={borderStyle}>
-        <main className={styles.main} onClick={handleToggleCardSelection} onMouseEnter={handleMouseEnterCard} onMouseLeave={handleOnMouseLeaveCard}>
-
+        <ProductCardBorder isMouseEnter={isMouseEnter} isCardSelected={isCardSelected} isDisabled={isDisabled} />
+        <div className={styles.main} onClick={handleToggleCardSelection} onMouseEnter={handleOnMouseEnterCard} onMouseLeave={handleOnMouseLeaveCard}>
           <div>
             <p className={titleStyle}> {cardTitle} </p>
             <h1 className={styles.brandname}>Нямушка</h1>
             <p className={styles.taste}> с {taste}</p>
             <AmountOfProducts amount={amount} mouseBonus={mouseBonus} note={note} />
           </div>
-
           <div className={weightStyle}>
             <div className={styles.top}>{String(weight).replace('.', ',')}</div>
             <p className={styles.bottom}>кг</p>
           </div>
-        </main>
+        </div>
       </div>
-
       <ProductDescription description={description} taste={taste} isDisabled={isDisabled} isCardSelected={isCardSelected} handleToggleCardSelection={handleToggleCardSelection} />
-
     </div >
   )
 }

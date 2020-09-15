@@ -1,0 +1,198 @@
+$bgcolorInitial: #1698d9;
+$bgcolorHover: #2ea8e6;
+
+
+.card {
+    flex: 0 1 25%;
+    font-family: "Trebuchet MS";
+    position: relative;
+    // margin: 0 80px 0 0;
+    @media(max-width: 1100px) {
+      margin: 0;
+    }
+   
+  }
+  
+.main {
+    background-color: #f2f2f2;
+    background-image: url('../../images/cat.png');
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    padding: 5px 0 15px 49px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    cursor: pointer;
+    border: 4px solid #1698d9;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    width: 320px;
+    height: 480px; 
+    border-radius: 14px;
+    // clip-path: polygon(14.7% 0, 100% 0, 100% 100%, 0 100%, 0 9.7%);
+    
+    @media(max-width: 320px) {
+      width: 280px;
+      height: 440px; 
+      padding: 10px 0 10px 40px;
+    }
+}
+ 
+.border {
+      margin: 0 14px;
+      position: absolute;
+      width: 30px;
+      height: 41px;
+      top: -25px;
+      left: 0;
+      background-color: $bgcolorInitial;
+      opacity: 100%;
+    //   border-radius: 14px;
+    //   clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%, 0 10%);
+      z-index: 2;
+      -webkit-transform: rotate(45deg);    
+        /* Firefox */
+        -moz-transform: rotate(45deg);    
+        /* IE */
+        -ms-transform: rotate(45deg);    
+        /* Opera */
+        -o-transform: rotate(45deg);
+      :hover {
+        // background-color: #2ea8e6;
+        & .weight {
+            background-color: #2ea8e6;
+        }
+      }
+      @media(max-width: 320px) {
+        width: 288px;
+        height: 448px;
+        margin: 0 8px;
+      }
+      
+}
+
+.borderDisabled { 
+  margin: 0 14px;
+  position: relative;
+  width: 328px;
+  height: 488px;
+  background-color: #b3b3b3;
+  border-radius: 14px;
+  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%, 0 10%);
+  & .main {
+    opacity: 0.5;
+    cursor: auto;
+  }
+  @media(max-width: 320px) {
+    width: 288px;
+    height: 448px;
+    margin: 0 8px;
+  }
+  & .weight {
+    background-color: #b3b3b3;
+  }
+}
+
+.borderSelected {
+    margin: 0 14px;
+      position: relative;
+      width: 328px;
+      height: 488px;
+      background-color: #d91667;
+      border-radius: 14px;
+      clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%, 0 10%);
+      @media(max-width: 320px) {
+        width: 288px;
+        height: 448px;
+        margin: 0 8px;
+      }
+      :hover {
+        & .weightSelected {
+            background-color: #e62e7a;
+        }
+      }
+}
+  
+.title {
+      color: #666666;
+      font-size: 16px;
+      margin-bottom: 10px;
+}
+
+.titleHovered {
+  color: #e62e7a;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+  
+.brandname {
+      color: #000000;
+      font-size: 48px;
+      font-weight: 700;
+      margin: 0 0 5px 0;
+      letter-spacing: 2px;
+      @media(max-width: 320px) {
+        font-size: 30px;
+      }
+}
+  
+.taste {
+      color: #000000;
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0 0 15px 0;
+      @media(max-width: 320px) {
+        font-size: 20px;
+        font-weight: 700; 
+      }
+}
+
+.amount {
+      display: flex;
+      color: #666666;
+      font-size: 14px;
+      line-height: 16px;
+      font-weight: 700;
+      margin: 0;
+      span {
+        font-weight: 400;
+      }
+}
+
+  .weight {
+    align-self: flex-end;
+    margin: 0 15px 0 0;
+    border-radius: 50%;
+    padding: 10px 5px;
+    width: 81px;
+    height: 81px;
+    background-color: #1698d9;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .weightSelected {
+    align-self: flex-end;
+    margin: 0 15px 0 0;
+    border-radius: 50%;
+    padding: 10px 5px;
+    width: 81px;
+    height: 81px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #d91667;
+  }
+.top {
+      color: #ffffff;
+      font-size: 42px;
+      margin-bottom: -3px;
+    }
+.bottom {
+        font-size: 21px;
+        color: #ffffff;
+        margin: 0;
+    }
+
