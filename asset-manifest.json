@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/TestFunbox/static/css/main.f34d01eb.chunk.css",
+    "main.js": "/TestFunbox/static/js/main.07dff4f5.chunk.js",
+    "main.js.map": "/TestFunbox/static/js/main.07dff4f5.chunk.js.map",
+    "runtime-main.js": "/TestFunbox/static/js/runtime-main.a9c57702.js",
+    "runtime-main.js.map": "/TestFunbox/static/js/runtime-main.a9c57702.js.map",
+    "static/js/2.d5f0462d.chunk.js": "/TestFunbox/static/js/2.d5f0462d.chunk.js",
+    "static/js/2.d5f0462d.chunk.js.map": "/TestFunbox/static/js/2.d5f0462d.chunk.js.map",
+    "index.html": "/TestFunbox/index.html",
+    "precache-manifest.8cc3208d645e0038506c5b5cd061feab.js": "/TestFunbox/precache-manifest.8cc3208d645e0038506c5b5cd061feab.js",
+    "service-worker.js": "/TestFunbox/service-worker.js",
+    "static/css/main.f34d01eb.chunk.css.map": "/TestFunbox/static/css/main.f34d01eb.chunk.css.map",
+    "static/js/2.d5f0462d.chunk.js.LICENSE.txt": "/TestFunbox/static/js/2.d5f0462d.chunk.js.LICENSE.txt",
+    "static/media/App.module.scss": "/TestFunbox/static/media/wrapperBackground.79d68011.png",
+    "static/media/ProductCard.module.scss": "/TestFunbox/static/media/cat.453a322e.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a9c57702.js",
+    "static/js/2.d5f0462d.chunk.js",
+    "static/css/main.f34d01eb.chunk.css",
+    "static/js/main.07dff4f5.chunk.js"
+  ]
+}
