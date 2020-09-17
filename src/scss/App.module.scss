@@ -14,7 +14,10 @@
 	font-style: normal;
 }
 
-
+body {
+  margin: 0;
+  padding: 0;
+}
 .wrapper {
   width: 100%;
   height: 100%;
@@ -22,7 +25,7 @@
   margin: 0 auto;
   padding: 45px;
   overflow: hidden;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.5) 100%), url('../images/941afad4465c7704abe8996ef0f495742e3963a5.png');
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.5) 100%), url('../images/wrapperBackground.png');
   background-repeat: repeat;
   display: flex;
   display: -ms-flexbox;
@@ -35,6 +38,10 @@
   @media(max-width: 1120px) {
     padding: 20px 0px;
   }
+  @media(max-width: 320px) {
+    display: block;
+    overflow: scroll;
+  }
 }
 
 .text {
@@ -43,7 +50,7 @@
   font-family: "Exo";
   font-size: 36px;
   text-align: center;
-  margin: 0 0 55px 0;
+  margin: 0 0 50px 0;
   flex: 0 1 100%;
   @media(max-width: 380px) {
     font-size: 24px;
@@ -59,6 +66,9 @@
   flex-wrap: nowrap;
   @media(max-width: 1120px) {
     flex-wrap: wrap;
+  }
+  @media(max-width: 320px) {
+    justify-content: flex-start;
   }
 }
 
